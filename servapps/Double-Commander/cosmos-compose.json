@@ -1,0 +1,35 @@
+{
+  "services": {
+    "doublecommander-doublecommander": {
+      "image": "lscr.io/linuxserver/doublecommander:latest",
+      "container_name": "Double Commander",
+      "environment": [
+        "PUID=1000",
+        "PGID=1000",
+        "TZ=Etc/UTC"
+      ],
+      "volumes": [
+        {
+          "source": "DoubleCommander-config",
+          "target": "/config",
+          "type": "volume"
+        },
+        {
+          "source": "/srv",
+          "target": "/data",
+          "type": "bind"
+        }
+      ],
+      "ports": [
+        "3000:3000",
+        "3001:3001"
+      ],
+      "restart": "unless-stopped",
+      "hostname": "doublecommander",
+      "network_mode": "cosmos-doublecommander-default"
+    }
+  },
+  "networks": {
+    "cosmos-doublecommander-default": {}
+  }
+}
