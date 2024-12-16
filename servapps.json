@@ -1,1 +1,54 @@
-
+[
+  {
+    "name": "Actual",
+    "longDescription": "<p>Actual Budget is a super fast and privacy-focused app for managing your finances. At its heart is the well proven and much loved Envelope Budgeting methodology. You own your data and can do whatever you want with it.Featuring multi - device sync,optional end - to - end encryption and so much more. < /p>",
+    "description": "Automated finance tools are great, except when they aren’t. We provide you with tools that are quick to use, but ultimately you are in control. We help you learn, instead of dictating.",
+    "tags": [
+      "Automated",
+      "finance",
+      "self-hosted"
+    ],
+    "repository": "https://github.com/actualbudget/actual-server/",
+    "image": "https://hub.docker.com/r/actualbudget/actual-server",
+    "supported_architectures": [
+      "amd64",
+      "arm64"
+    ],
+    "id": "Actual-server",
+    "screenshots": [
+      "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Actual-server/screenshots/1.png",
+      "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Actual-server/screenshots/2.png",
+      "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Actual-server/screenshots/3.png"
+    ],
+    "artefacts": {},
+    "icon": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Actual-server/icon.png",
+    "compose": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Actual-server/cosmos-compose.json"
+  },
+  {
+    "name": "Double Commander",
+    "longDescription": "<p>Double Commander is a free cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.< /p>",
+    "description": "Dual pane file manager",
+    "tags": [
+      "file",
+      "manager"
+    ],
+    "image": "lscr.io/linuxserver/doublecommander",
+    "supported_architectures": [
+      "x86-64",
+      "arm64"
+    ],
+    "id": "Double-Commander",
+    "screenshots": [
+      "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Double-Commander/screenshots/CompareFiles.png",
+      "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Double-Commander/screenshots/MainWindow.png",
+      "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Double-Commander/screenshots/MainWindowDark.png",
+      "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Double-Commander/screenshots/MultiRename.png",
+      "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Double-Commander/screenshots/PackFiles.png",
+      "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Double-Commander/screenshots/Splitter.png",
+      "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Double-Commander/screenshots/SyncDirs.png"
+    ],
+    "artefacts": {},
+    "icon": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Double-Commander/icon.png",
+    "compose": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/Double-Commander/cosmos-compose.json"
+  }
+]
