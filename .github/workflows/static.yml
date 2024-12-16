@@ -18,10 +18,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Setup Node.js environment
         uses: actions/setup-node@v2.5.2
         with:
           node-version: 18.x
@@ -29,12 +29,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Debug file structure
+      - name: List repository files
         run: ls -R
 
-      - name: Execute index.js
+      - name: Run index.js
         run: |
-          echo "Running index.js..."
+          echo "Executing index.js..."
           node index.js
         env:
           DEBUG: "*"
@@ -49,4 +49,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
