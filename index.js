@@ -10,7 +10,7 @@ let servappsFolder = configFile.servappsFolder;
 // list all directories in the directory servapps and compile them in servapps.json
 
 const servapps = fs.readdirSync(`./${servappsFolder}`).filter(file => fs.lstatSync(`./${servappsFolder}/${file}`).isDirectory())
-console.log("SERVEAPPS", serveapps);
+console.log("SERVAPPS", servapps);
 
 for (const file of servapps) {
   const servapp = require(`./${servappsFolder}/${file}/description.json`)
@@ -46,7 +46,7 @@ for (const file of servapps) {
   servappsJSON.push(servapp)
 }
 
-console.log("SERVEAPPS-JSON", serveappsJSON);
+console.log("SERVAPPS-JSON", servappsJSON);
 
 // add showcase
 const _sc = ["Actual", "Double Commander"];
