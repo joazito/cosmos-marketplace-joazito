@@ -1,52 +1,51 @@
-name: Deploy static content to Pages
+name: Build and Deploy
 
 on:
   push:
-    branches: ["master"]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
+      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Set up the Node.js environment
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.5.2
+        uses: actions/setup-node@v2
         with:
           node-version: 18.x
 
+      # Install Node.js dependencies
       - name: Install dependencies
         run: npm install
 
-      - name: List repository files
-        run: ls -R
-
+      # Run the custom index.js script
       - name: Run index.js
-        run: |
-          echo "Executing index.js..."
-          node index.js
-        env:
-          DEBUG: "*"
+        run: node index.js
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      # Build the site using Jekyll
+      - name: Build site with Jekyll
+        uses: actions/jekyll-build-pages@v1
 
-      - name: Upload artifact
+      # Upload the generated site for deployment
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '.'
+          path: ./_site
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      # Deploy the site to GitHub Pages
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
