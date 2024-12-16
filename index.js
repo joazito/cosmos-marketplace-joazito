@@ -47,7 +47,7 @@ for (const file of servapps) {
 }
 
 // add showcase
-const _sc = ["Jellyfin", "Home Assistant", "Nextcloud"];
+const _sc = ["Actual", "Double Commander"];
 const showcases = servappsJSON.filter((app) => _sc.includes(app.name));
 
 let apps = {
