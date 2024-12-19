@@ -2,7 +2,7 @@
   "services": {
     "doublecommander-doublecommander": {
       "image": "lscr.io/linuxserver/doublecommander:latest",
-      "container_name": "Double Commander",
+      "container_name": "DoubleCommander",
       "environment": [
         "PUID=1000",
         "PGID=1000",
@@ -15,7 +15,7 @@
           "type": "volume"
         },
         {
-          "source": "/srv",
+          "source": "/mnt",
           "target": "/data",
           "type": "bind"
         }
