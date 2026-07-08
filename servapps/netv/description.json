@@ -1,0 +1,9 @@
+{
+  "name": "neTV",
+  "longDescription": "<p>neTV is a minimal, self-hosted web interface for IPTV streams. It plays content from your own Xtream Codes or M3U provider with a clean UI that works on desktop, tablet, mobile, and Chromecast.</p><p>Designed to do one thing well: play IPTV with a fast, keyboard-friendly interface. Features include a live EPG grid guide, movies and series with metadata, search across all content, favorites with drag-and-drop ordering, resume playback, and closed captions with style customization.</p><p>Transcoding is extensively optimized for low latency: smart passthrough remuxes h264+aac streams without re-encoding (zero CPU), with optional full GPU acceleration (NVENC/VAAPI/QSV) when a GPU is present.</p>",
+  "description": "A minimal, self-hosted web IPTV player with EPG guide, VOD, and efficient transcoding.",
+  "tags": ["iptv", "media", "streaming", "video", "self-hosted", "xtream", "m3u", "epg"],
+  "repository": "https://github.com/jvdillon/netv",
+  "image": "https://github.com/jvdillon/netv/pkgs/container/netv",
+  "supported_architectures": ["amd64"]
+}
