@@ -1,0 +1,60 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.9.0",
+    "name": "netv",
+    "services": {
+        "{ServiceName}": {
+            "image": "ghcr.io/jvdillon/netv:latest",
+            "container_name": "{ServiceName}",
+            "hostname": "{ServiceName}",
+            "restart": "unless-stopped",
+            "environment": [
+                "NETV_PORT=8000",
+                "LOG_LEVEL=INFO"
+            ],
+            "devices": [
+                "/dev/dri:/dev/dri"
+            ],
+            "volumes": [
+                {
+                    "type": "volume",
+                    "source": "{ServiceName}-cache",
+                    "target": "/app/cache"
+                },
+                {
+                    "type": "bind",
+                    "source": "/etc/localtime:ro",
+                    "target": "/etc/localtime:ro"
+                }
+            ],
+            "routes": [
+                {
+                    "name": "{ServiceName}",
+                    "description": "Expose {ServiceName} to the web",
+                    "useHost": true,
+                    "target": "http://{ServiceName}:8000",
+                    "mode": "SERVAPP",
+                    "Timeout": 14400000,
+                    "ThrottlePerMinute": 12000,
+                    "BlockCommonBots": true,
+                    "SmartShield": {
+                        "Enabled": true
+                    }
+                }
+            ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/netv/icon.png",
+                "cosmos-stack": "{ServiceName}",
+                "cosmos-stack-main": "{ServiceName}"
+            }
+        }
+    },
+    "volumes": {
+        "{ServiceName}-cache": {
+            "name": "{ServiceName}-cache",
+            "driver": "local"
+        }
+    }
+}

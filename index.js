@@ -49,7 +49,7 @@ for (const file of servapps) {
 console.log("SERVAPPS-JSON", servappsJSON);
 
 // add showcase
-const _sc = ["Actual", "Double Commander"];
+const _sc = ["Actual", "Double Commander", "neTV"];
 const showcases = servappsJSON.filter((app) => _sc.includes(app.name));
 
 let apps = {
