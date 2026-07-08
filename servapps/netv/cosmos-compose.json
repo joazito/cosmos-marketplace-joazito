@@ -9,7 +9,6 @@
             "hostname": "{ServiceName}",
             "restart": "unless-stopped",
             "environment": [
-                "NETV_PORT=8000",
                 "LOG_LEVEL=INFO"
             ],
             "devices": [

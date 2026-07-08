@@ -9,8 +9,7 @@
             "hostname": "{ServiceName}",
             "restart": "unless-stopped",
             "environment": [
-                "NODE_ENV=production",
-                "PORT=3000"
+                "NODE_ENV=production"
             ],
             "devices": [
                 "/dev/dri:/dev/dri"
