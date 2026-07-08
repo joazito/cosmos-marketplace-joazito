@@ -1,0 +1,9 @@
+{
+  "name": "nodecast-tv",
+  "longDescription": "<p>nodecast-tv is a modern, self-hosted web IPTV player supporting Live TV, EPG, Movies (VOD), and Series. Built for performance and large libraries (7000+ channels).</p><p>Features include fast channel zapping, an interactive 24h EPG grid guide with search, dedicated Movies and Series sections with rich metadata and posters, a unified favorites system with instant sync, and user authentication with admin/viewer roles plus optional OIDC SSO (Authentik, Keycloak, etc.).</p><p>Supports Xtream Codes and M3U playlists. Hardware-accelerated transcoding via NVIDIA NVENC, AMD AMF, Intel QuickSync, and VAAPI, with smart codec detection and remux/transcode decisions plus 5.1&rarr;Stereo downmix presets.</p>",
+  "description": "A modern, self-hosted web IPTV player with Live TV, EPG, VOD, Series, auth, and hardware transcoding.",
+  "tags": ["iptv", "media", "streaming", "video", "self-hosted", "xtream", "m3u", "epg", "vod"],
+  "repository": "https://github.com/technomancer702/nodecast-tv",
+  "image": "https://github.com/technomancer702/nodecast-tv/pkgs/container/nodecast-tv",
+  "supported_architectures": ["amd64", "arm64"]
+}

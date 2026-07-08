@@ -1,0 +1,69 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.9.0",
+    "name": "nodecast-tv",
+    "services": {
+        "{ServiceName}": {
+            "image": "ghcr.io/technomancer702/nodecast-tv:latest",
+            "container_name": "{ServiceName}",
+            "hostname": "{ServiceName}",
+            "restart": "unless-stopped",
+            "environment": [
+                "NODE_ENV=production",
+                "PORT=3000"
+            ],
+            "devices": [
+                "/dev/dri:/dev/dri"
+            ],
+            "volumes": [
+                {
+                    "type": "volume",
+                    "source": "{ServiceName}-data",
+                    "target": "/app/data"
+                },
+                {
+                    "type": "volume",
+                    "source": "{ServiceName}-transcode",
+                    "target": "/app/transcode-cache"
+                },
+                {
+                    "type": "bind",
+                    "source": "/etc/localtime:ro",
+                    "target": "/etc/localtime:ro"
+                }
+            ],
+            "routes": [
+                {
+                    "name": "{ServiceName}",
+                    "description": "Expose {ServiceName} to the web",
+                    "useHost": true,
+                    "target": "http://{ServiceName}:3000",
+                    "mode": "SERVAPP",
+                    "Timeout": 14400000,
+                    "ThrottlePerMinute": 12000,
+                    "BlockCommonBots": true,
+                    "SmartShield": {
+                        "Enabled": true
+                    }
+                }
+            ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/nodecast-tv/icon.png",
+                "cosmos-stack": "{ServiceName}",
+                "cosmos-stack-main": "{ServiceName}"
+            }
+        }
+    },
+    "volumes": {
+        "{ServiceName}-data": {
+            "name": "{ServiceName}-data",
+            "driver": "local"
+        },
+        "{ServiceName}-transcode": {
+            "name": "{ServiceName}-transcode",
+            "driver": "local"
+        }
+    }
+}
