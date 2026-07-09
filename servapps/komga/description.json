@@ -1,0 +1,9 @@
+{
+  "name": "Komga",
+  "longDescription": "<p>Komga is a free, open-source media server for your comics, mangas, BDs (bandes dessinées), magazines, and eBooks.</p><p>It offers a responsive web UI for browsing libraries, series, and books; a built-in web reader with multiple reading modes; per-library user access control with age/label restrictions; metadata editing and automatic embedded-metadata import; collections and read lists; OPDS v1/v2 feeds; Kobo and KOReader sync; duplicate file/page detection; and a full REST API for community tooling.</p>",
+  "description": "Media server for comics, mangas, BDs, magazines and eBooks with web reader and OPDS.",
+  "tags": ["comics", "manga", "media-server", "ebooks", "self-hosted"],
+  "repository": "https://github.com/gotson/komga",
+  "image": "https://hub.docker.com/r/gotson/komga",
+  "supported_architectures": ["amd64", "arm64", "arm"]
+}

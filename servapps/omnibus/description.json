@@ -1,0 +1,9 @@
+{
+  "name": "Omnibus",
+  "longDescription": "<p>Omnibus is an all-in-one, self-hosted comic book and manga app built with Next.js. It combines a reader, library manager, metadata editor, and a download/automation pipeline into one web app.</p><p>This stack bundles Omnibus with a Redis sidecar (required). <strong>Note: Omnibus is beta software and currently ships amd64-only images</strong> — it will not run on ARM hosts (Raspberry Pi, etc.) without emulation.</p>",
+  "description": "Self-hosted all-in-one comic book and manga reader/manager (Next.js). Beta, amd64-only.",
+  "tags": ["comics", "manga", "media-server", "reader", "self-hosted"],
+  "repository": "https://github.com/hankscafe/omnibus",
+  "image": "https://github.com/hankscafe/omnibus/pkgs/container/omnibus",
+  "supported_architectures": ["amd64"]
+}

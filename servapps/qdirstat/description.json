@@ -1,0 +1,9 @@
+{
+  "name": "QDirStat",
+  "longDescription": "<p>QDirStat is a Qt-based graphical disk-usage analyzer — a friendly successor to the classic KDirStat / KDiskUsage. Browse your file tree by size, find bloated directories, and clean up junk with built-in file actions.</p><p>This package runs the full QDirStat desktop GUI in your browser via noVNC. Mount the host paths you want to analyse under <code>/storage</code> (read-only by default) and open the web UI to start scanning.</p>",
+  "description": "Graphical disk-usage analyzer, running in the browser via noVNC.",
+  "tags": ["disk-usage", "storage", "filesystem", "cleanup", "gui"],
+  "repository": "https://github.com/shundhammer/qdirstat",
+  "image": "https://hub.docker.com/r/jlesage/qdirstat",
+  "supported_architectures": ["amd64", "arm64", "arm"]
+}

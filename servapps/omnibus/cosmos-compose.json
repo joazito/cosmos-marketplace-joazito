@@ -1,0 +1,97 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.9.0",
+    "name": "omnibus",
+    "services": {
+        "{ServiceName}": {
+            "container_name": "{ServiceName}",
+            "hostname": "{ServiceName}",
+            "image": "ghcr.io/hankscafe/omnibus:latest",
+            "restart": "unless-stopped",
+            "environment": [
+                "TZ=auto",
+                "NEXTAUTH_URL=https://replace-with-your-cosmos-url.example",
+                "NEXTAUTH_SECRET={Passwords.0}",
+                "DATABASE_URL=file:/config/omnibus.db",
+                "OMNIBUS_REDIS_URL=redis://{ServiceName}-redis:6379/0",
+                "OMNIBUS_CACHE_DIR=/config/cache",
+                "OMNIBUS_LOGS_DIR=/config/logs",
+                "OMNIBUS_BACKUPS_DIR=/config/backups"
+            ],
+            "depends_on": {
+                "{ServiceName}-redis": {
+                    "condition": "service_started"
+                }
+            },
+            "volumes": [
+                {
+                    "type": "volume",
+                    "source": "{ServiceName}-config",
+                    "target": "/config"
+                },
+                {
+                    "type": "volume",
+                    "source": "{ServiceName}-data",
+                    "target": "/data"
+                }
+            ],
+            "routes": [
+                {
+                    "name": "{ServiceName}",
+                    "description": "Expose {ServiceName} to the web",
+                    "useHost": true,
+                    "target": "http://{ServiceName}:3000",
+                    "mode": "SERVAPP",
+                    "Timeout": 14400000,
+                    "ThrottlePerMinute": 12000,
+                    "BlockCommonBots": true,
+                    "SmartShield": {
+                        "Enabled": true
+                    }
+                }
+            ],
+            "labels": {
+                "cosmos-persistent-env": "NEXTAUTH_SECRET, NEXTAUTH_URL, OMNIBUS_REDIS_URL",
+                "cosmos-stack": "{ServiceName}",
+                "cosmos-stack.main": "{ServiceName}",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/omnibus/icon.png",
+                "cosmos-force-network-secured": "true"
+            }
+        },
+        "{ServiceName}-redis": {
+            "container_name": "{ServiceName}-redis",
+            "hostname": "{ServiceName}-redis",
+            "image": "redis:alpine",
+            "restart": "unless-stopped",
+            "volumes": [
+                {
+                    "type": "volume",
+                    "source": "{ServiceName}-redis",
+                    "target": "/data"
+                }
+            ],
+            "labels": {
+                "cosmos-stack": "{ServiceName}",
+                "cosmos-stack.main": "{ServiceName}",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/omnibus/icon.png",
+                "cosmos-force-network-secured": "true"
+            }
+        }
+    },
+    "volumes": {
+        "{ServiceName}-config": {
+            "name": "{ServiceName}-config",
+            "driver": "local"
+        },
+        "{ServiceName}-data": {
+            "name": "{ServiceName}-data",
+            "driver": "local"
+        },
+        "{ServiceName}-redis": {
+            "name": "{ServiceName}-redis",
+            "driver": "local"
+        }
+    }
+}

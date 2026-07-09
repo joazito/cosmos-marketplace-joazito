@@ -1,0 +1,48 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.9.0",
+    "name": "beszel",
+    "services": {
+        "{ServiceName}": {
+            "image": "ghcr.io/henrygd/beszel:latest",
+            "container_name": "{ServiceName}",
+            "hostname": "{ServiceName}",
+            "restart": "unless-stopped",
+            "volumes": [
+                {
+                    "type": "volume",
+                    "source": "{ServiceName}-data",
+                    "target": "/beszel_data"
+                }
+            ],
+            "routes": [
+                {
+                    "name": "{ServiceName}",
+                    "description": "Expose {ServiceName} to the web",
+                    "useHost": true,
+                    "target": "http://{ServiceName}:8090",
+                    "mode": "SERVAPP",
+                    "Timeout": 14400000,
+                    "ThrottlePerMinute": 12000,
+                    "BlockCommonBots": true,
+                    "SmartShield": {
+                        "Enabled": true
+                    }
+                }
+            ],
+            "labels": {
+                "cosmos-force-network-secured": "true",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/beszel/icon.png",
+                "cosmos-stack": "{ServiceName}",
+                "cosmos-stack-main": "{ServiceName}"
+            }
+        }
+    },
+    "volumes": {
+        "{ServiceName}-data": {
+            "name": "{ServiceName}-data",
+            "driver": "local"
+        }
+    }
+}

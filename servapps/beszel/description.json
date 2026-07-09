@@ -1,0 +1,9 @@
+{
+  "name": "Beszel",
+  "longDescription": "<p>Beszel is a lightweight server monitoring platform with Docker statistics, historical data, and alerting. It has a friendly web interface, simple configuration, and is ready to use out of the box.</p><p>This is the <strong>hub</strong> (dashboard) container. After deploying, add one lightweight <em>agent</em> container to each machine you want to monitor — including other hosts on your network. Built on PocketBase; supports automatic backup, multi-user, OAuth authentication, and API access.</p>",
+  "description": "Lightweight server/Docker monitoring hub with web dashboard, history and alerts.",
+  "tags": ["monitoring", "docker", "metrics", "alerts", "self-hosted"],
+  "repository": "https://github.com/henrygd/beszel",
+  "image": "https://github.com/henrygd/beszel/pkgs/container/beszel",
+  "supported_architectures": ["amd64", "arm64", "arm"]
+}

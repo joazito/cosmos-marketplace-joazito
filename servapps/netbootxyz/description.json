@@ -1,0 +1,9 @@
+{
+  "name": "netboot.xyz",
+  "longDescription": "<p>netboot.xyz is a network-based bootable operating system installer built on iPXE. Boot your favourite OS installers, live CDs, utilities, and rescue tools directly over the network — no USB sticks required.</p><p>The included web UI lets you manage local assets, custom menus, and endpoints. Note that this container only serves the boot files and web configuration; actual PXE booting requires a DHCP server on your network configured with the right next-server and boot-file name.</p>",
+  "description": "Network-bootable OS installers and live CDs via iPXE, with a web config UI.",
+  "tags": ["pxe", "ipxe", "network-boot", "installer", "rescue"],
+  "repository": "https://github.com/netbootxyz/netboot.xyz",
+  "image": "https://hub.docker.com/r/netbootxyz/netbootxyz",
+  "supported_architectures": ["amd64", "arm64"]
+}

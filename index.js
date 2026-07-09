@@ -51,7 +51,7 @@ for (const file of servapps) {
 console.log("SERVAPPS-JSON", servappsJSON);
 
 // add showcase
-const _sc = ["Actual", "Double Commander", "neTV", "nodecast-tv", "Cloud Commander", "Bifrost", "TeslaMate", "Open WebUI", "FileBrowser Quantum", "Spoolman", "DDNS Updater", "Zigbee2MQTT", "Stash", "Wallos", "ViniPlay", "tuliprox"];
+const _sc = ["Actual", "Double Commander", "neTV", "nodecast-tv", "Cloud Commander", "Bifrost", "TeslaMate", "Open WebUI", "FileBrowser Quantum", "Spoolman", "DDNS Updater", "Zigbee2MQTT", "Stash", "Wallos", "ViniPlay", "tuliprox", "Komga", "netboot.xyz", "Beszel", "QDirStat", "Omnibus"];
 const showcases = servappsJSON.filter((app) => _sc.includes(app.name));
 
 let apps = {
