@@ -1,0 +1,9 @@
+{
+  "name": "Open WebUI",
+  "longDescription": "<p>Open WebUI is a user-friendly, self-hosted AI interface that supports Ollama and OpenAI-compatible APIs. It provides a ChatGPT-like experience for your own local or remote language models.</p><p>Features include multi-user support with role-based access, document chat (RAG), web search integration, model management, and a rich plugin ecosystem. Connects to Ollama, OpenAI, or any OpenAI-compatible endpoint.</p>",
+  "description": "A self-hosted AI interface supporting Ollama, OpenAI API, and more.",
+  "tags": ["ai", "llm", "ollama", "openai", "chat", "self-hosted"],
+  "repository": "https://github.com/open-webui/open-webui",
+  "image": "https://github.com/open-webui/open-webui/pkgs/container/open-webui",
+  "supported_architectures": ["amd64", "arm64"]
+}

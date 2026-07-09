@@ -1,0 +1,9 @@
+{
+  "name": "FileBrowser Quantum",
+  "longDescription": "<p>FileBrowser Quantum is a self-hosted web-based file manager and a major fork of FileBrowser. It features multi-source configuration, real-time indexed search, OIDC/LDAP/JWT authentication, and rich media previews.</p><p>Configured via a config.yaml file supporting multiple sources, each with its own host path. Includes fast indexed search across large directories and improved performance over the original FileBrowser.</p>",
+  "description": "A self-hosted web-based file manager with multi-source config and real-time indexed search.",
+  "tags": ["file", "manager", "file-manager", "self-hosted"],
+  "repository": "https://github.com/gtsteffaniak/filebrowser",
+  "image": "https://hub.docker.com/r/gtstef/filebrowser",
+  "supported_architectures": ["amd64", "arm64"]
+}

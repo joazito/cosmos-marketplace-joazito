@@ -1,0 +1,9 @@
+{
+  "name": "Spoolman",
+  "longDescription": "<p>Spoolman is a self-hosted web service to manage your 3D-printer filament spools and monitor their usage. Keep track of your inventory, remaining filament, and spool history.</p><p>Integrates with Klipper/Moonraker, OctoPrint, and Home Assistant. Supports adding spools, vendors, materials, and colors, with automatic tracking of filament consumption per print.</p>",
+  "description": "Track your 3D-printer filament spool inventory and usage.",
+  "tags": ["3d-printing", "filament", "inventory", "self-hosted"],
+  "repository": "https://github.com/Donkie/Spoolman",
+  "image": "https://github.com/Donkie/Spoolman/pkgs/container/spoolman",
+  "supported_architectures": ["amd64", "arm64", "arm"]
+}

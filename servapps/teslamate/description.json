@@ -1,0 +1,9 @@
+{
+  "name": "TeslaMate",
+  "longDescription": "<p>TeslaMate is a powerful, self-hosted data logger for Tesla vehicles. It collects driving, charging, and location data from the Tesla API and stores it in a PostgreSQL database for analysis and visualization.</p><p>Provides detailed statistics via Grafana dashboards: trip summaries, efficiency, charging sessions, battery health, and lifetime driving maps. Data can also be published to an MQTT broker for integration with Home Assistant.</p>",
+  "description": "A self-hosted data logger for your Tesla vehicle.",
+  "tags": ["tesla", "vehicle", "logger", "data", "grafana", "self-hosted"],
+  "repository": "https://github.com/teslamate-org/teslamate",
+  "image": "https://hub.docker.com/r/teslamate/teslamate",
+  "supported_architectures": ["amd64", "arm64"]
+}

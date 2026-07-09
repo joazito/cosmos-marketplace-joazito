@@ -1,0 +1,9 @@
+{
+  "name": "Bifrost",
+  "longDescription": "<p>Bifrost is a high-performance, enterprise-grade AI gateway that is OpenAI-compatible and unifies 23+ LLM providers behind a single API. It acts as a drop-in replacement for OpenAI with adaptive load balancing across providers.</p><p>Features include an adaptive load balancer, support for 1000+ models, sub-100&micro;s overhead, a built-in configuration and monitoring web UI, and zero-config startup. Providers and API keys are configured through the web interface.</p>",
+  "description": "A high-performance OpenAI-compatible AI gateway unifying 23+ LLM providers.",
+  "tags": ["ai", "llm", "gateway", "openai", "proxy", "self-hosted"],
+  "repository": "https://github.com/maximhq/bifrost",
+  "image": "https://hub.docker.com/r/maximhq/bifrost",
+  "supported_architectures": ["amd64", "arm64"]
+}

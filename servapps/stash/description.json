@@ -1,0 +1,9 @@
+{
+  "name": "Stash",
+  "longDescription": "<p>Stash is a self-hosted web-based media library organizer that catalogs and serves mixed media collections (video and images). It provides metadata scraping, tagging, generated previews, and a searchable database for your library.</p><p>Features include automated metadata scraping from multiple sources, scene and image organization with tagging, generated thumbnails and previews, plugin support, and a responsive web UI. Bundles FFmpeg for media processing.</p>",
+  "description": "A self-hosted web-based media library organizer with metadata scraping and tagging.",
+  "tags": ["media", "library", "video", "organizer", "metadata", "self-hosted"],
+  "repository": "https://github.com/stashapp/stash",
+  "image": "https://hub.docker.com/r/stashapp/stash",
+  "supported_architectures": ["amd64", "arm64", "arm"]
+}

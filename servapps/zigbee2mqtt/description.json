@@ -1,0 +1,9 @@
+{
+  "name": "Zigbee2MQTT",
+  "longDescription": "<p>Zigbee2MQTT is a Zigbee to MQTT bridge that lets you use Zigbee devices without the vendor's proprietary bridge. It enables you to control Zigbee lights, sensors, switches, and more from your own MQTT broker.</p><p>Supports a huge ecosystem of Zigbee devices (1000+), with a web frontend for device management, network maps, OTA updates, and group control. Requires a supported Zigbee coordinator (USB dongle).</p>",
+  "description": "A Zigbee to MQTT bridge &mdash; use Zigbee devices without proprietary bridges.",
+  "tags": ["zigbee", "mqtt", "iot", "home-automation", "smarthome", "self-hosted"],
+  "repository": "https://github.com/Koenkk/zigbee2mqtt",
+  "image": "https://github.com/Koenkk/zigbee2mqtt/pkgs/container/zigbee2mqtt",
+  "supported_architectures": ["amd64", "arm64", "arm"]
+}

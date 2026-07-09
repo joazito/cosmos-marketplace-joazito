@@ -1,0 +1,9 @@
+{
+  "name": "Cloud Commander",
+  "longDescription": "<p>Cloud Commander is a file manager for the web with console and editor. It helps you manage your files and folders from any browser via a dual-pane interface.</p><p>Features include a built-in terminal, code editor, file viewer, and directory operations. Open source, written in Node.js.</p>",
+  "description": "A web-based dual-pane file manager with built-in console and editor.",
+  "tags": ["file", "manager", "file-manager", "console", "editor", "self-hosted"],
+  "repository": "https://github.com/coderaiser/cloudcmd",
+  "image": "https://hub.docker.com/r/coderaiser/cloudcmd",
+  "supported_architectures": ["amd64", "arm64"]
+}

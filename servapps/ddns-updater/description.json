@@ -1,0 +1,9 @@
+{
+  "name": "DDNS Updater",
+  "longDescription": "<p>DDNS Updater is a self-hosted container that periodically updates DNS records with the current public IP address. It keeps your domain pointing at home even when your ISP changes your IP.</p><p>Supports 55+ DNS providers including Cloudflare, Namecheap, GoDaddy, DuckDNS, OVH, Route53, Gandi, Porkbun, and Hetzner. Includes a web UI to view update status and history, plus notifications via Shoutrrr.</p>",
+  "description": "Update DNS records periodically with a WebUI for 55+ DNS providers.",
+  "tags": ["dns", "ddns", "networking", "cloudflare", "self-hosted"],
+  "repository": "https://github.com/qdm12/ddns-updater",
+  "image": "https://github.com/qdm12/ddns-updater/pkgs/container/ddns-updater",
+  "supported_architectures": ["amd64", "arm64", "arm"]
+}

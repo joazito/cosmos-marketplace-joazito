@@ -1,0 +1,132 @@
+{
+    "cosmos-installer": {},
+    "minVersion": "0.9.0",
+    "name": "teslamate",
+    "services": {
+        "{ServiceName}": {
+            "container_name": "{ServiceName}",
+            "hostname": "{ServiceName}",
+            "image": "teslamate/teslamate:latest",
+            "restart": "unless-stopped",
+            "environment": [
+                "TZ=auto",
+                "ENCRYPTION_KEY={Passwords.0}",
+                "DATABASE_USER=teslamate",
+                "DATABASE_PASS={Passwords.1}",
+                "DATABASE_NAME=teslamate",
+                "DATABASE_HOST={ServiceName}-db"
+            ],
+            "depends_on": {
+                "{ServiceName}-db": {
+                    "condition": "service_healthy"
+                }
+            },
+            "networks": {
+                "{ServiceName}": {}
+            },
+            "network_mode": "{ServiceName}",
+            "volumes": [
+                {
+                    "type": "volume",
+                    "source": "{ServiceName}-import",
+                    "target": "/opt/app/import"
+                },
+                {
+                    "type": "bind",
+                    "source": "/etc/localtime:ro",
+                    "target": "/etc/localtime:ro"
+                }
+            ],
+            "routes": [
+                {
+                    "name": "{ServiceName}",
+                    "description": "Expose {ServiceName} to the web",
+                    "useHost": true,
+                    "target": "http://{ServiceName}:4000",
+                    "mode": "SERVAPP",
+                    "Timeout": 14400000,
+                    "ThrottlePerMinute": 12000,
+                    "BlockCommonBots": true,
+                    "SmartShield": {
+                        "Enabled": true
+                    }
+                }
+            ],
+            "labels": {
+                "cosmos-persistent-env": "ENCRYPTION_KEY, DATABASE_PASS",
+                "cosmos-stack": "{ServiceName}",
+                "cosmos-stack.main": "{ServiceName}",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/teslamate/icon.png",
+                "cosmos-force-network-mode": "{ServiceName}",
+                "cosmos-force-network-secured": "true"
+            }
+        },
+        "{ServiceName}-db": {
+            "container_name": "{ServiceName}-db",
+            "hostname": "{ServiceName}-db",
+            "image": "postgres:17",
+            "restart": "unless-stopped",
+            "security_opt": [
+                "seccomp:unconfined",
+                "apparmor:unconfined"
+            ],
+            "environment": [
+                "POSTGRES_USER=teslamate",
+                "POSTGRES_PASSWORD={Passwords.1}",
+                "POSTGRES_DB=teslamate"
+            ],
+            "networks": {
+                "{ServiceName}": {}
+            },
+            "network_mode": "{ServiceName}",
+            "volumes": [
+                {
+                    "type": "volume",
+                    "source": "{ServiceName}-db",
+                    "target": "/var/lib/postgresql/data"
+                },
+                {
+                    "type": "bind",
+                    "source": "/etc/localtime:ro",
+                    "target": "/etc/localtime:ro"
+                }
+            ],
+            "healthcheck": {
+                "test": ["CMD-SHELL", "pg_isready -U teslamate"],
+                "interval": "10s",
+                "timeout": "5s",
+                "retries": 5
+            },
+            "labels": {
+                "cosmos-persistent-env": "POSTGRES_PASSWORD",
+                "cosmos-stack": "{ServiceName}",
+                "cosmos-stack.main": "{ServiceName}",
+                "cosmos-auto-update": "true",
+                "cosmos-icon": "https://joazito.github.io/cosmos-marketplace-joazito/servapps/teslamate/icon.png",
+                "cosmos-force-network-mode": "{ServiceName}",
+                "cosmos-force-network-secured": "true"
+            }
+        }
+    },
+    "volumes": {
+        "{ServiceName}-import": {
+            "name": "{ServiceName}-import",
+            "driver": "local"
+        },
+        "{ServiceName}-db": {
+            "name": "{ServiceName}-db",
+            "driver": "local"
+        }
+    },
+    "networks": {
+        "{ServiceName}": {
+            "driver": "bridge",
+            "ipam": {
+                "config": [
+                    { "subnet": "172.16.30.0/24" }
+                ]
+            }
+        }
+    }
+}
