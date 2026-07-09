@@ -1,0 +1,9 @@
+{
+  "name": "Wallos",
+  "longDescription": "<p>Wallos is a powerful, open-source, self-hostable web app for tracking recurring expenses and subscriptions and visualizing your budget. Never lose track of a subscription renewal again.</p><p>Features include a calendar view of upcoming payments, monthly cost statistics, currency conversion, custom subscription logos, and notifications via multiple channels (webhook, email, Telegram, etc.).</p>",
+  "description": "Track recurring expenses and subscriptions with a budget visualization dashboard.",
+  "tags": ["finance", "subscriptions", "budget", "expenses", "self-hosted"],
+  "repository": "https://github.com/ellite/Wallos",
+  "image": "https://hub.docker.com/r/bellamy/wallos",
+  "supported_architectures": ["amd64", "arm64", "arm"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "tuliprox",
+  "longDescription": "<p>tuliprox is a high-performance IPTV proxy and playlist processor written in Rust. It ingests M3U/M3U8, Xtream Codes, and local media sources, then reshapes, filters, and merges them into clean EPG-tagged output for Plex, Jellyfin, Emby, and Kodi clients.</p><p>Features include stream transcoding, content filtering and rewriting, EPG generation, a web UI for configuration, and multi-source aggregation. Configured via YAML files editable through the web interface.</p>",
+  "description": "A high-performance IPTV proxy and playlist processor for Plex, Jellyfin, Emby, and Kodi.",
+  "tags": ["iptv", "proxy", "m3u", "plex", "jellyfin", "epg", "self-hosted"],
+  "repository": "https://github.com/euzu/tuliprox",
+  "image": "https://github.com/euzu/tuliprox/pkgs/container/tuliprox",
+  "supported_architectures": ["amd64", "arm64"]
+}

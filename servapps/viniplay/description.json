@@ -1,0 +1,9 @@
+{
+  "name": "ViniPlay",
+  "longDescription": "<p>ViniPlay is a self-hosted, multi-user IPTV player with a modern web interface. It proxies and transcodes M3U and EPG streams via FFmpeg (with GPU support), providing a high-performance EPG TV guide, multi-view, Chromecast, push notifications, DVR recording, and VOD support.</p><p>Supports Xtream Codes and M3U playlist sources, multiple transcoding profiles, and multi-user accounts. Users add their own playlist sources through the web UI Settings tab.</p>",
+  "description": "A self-hosted multi-user IPTV player with EPG guide, transcoding, DVR, and VOD.",
+  "tags": ["iptv", "media", "streaming", "video", "epg", "dvr", "self-hosted"],
+  "repository": "https://github.com/ardoviniandrea/ViniPlay",
+  "image": "https://hub.docker.com/r/ardovini/viniplay",
+  "supported_architectures": ["amd64", "arm64"]
+}
