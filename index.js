@@ -19,9 +19,11 @@ for (const file of servapps) {
   servapp.artefacts = {};
 
   // list all screenshots in the directory servapps/${file}/screenshots
-  const screenshots = fs.readdirSync(`./${servappsFolder}/${file}/screenshots`)
-  for (const screenshot of screenshots) {
-    servapp.screenshots.push(`${repoURL}/${servappsFolder}/${file}/screenshots/${screenshot}`)
+  if(fs.existsSync(`./${servappsFolder}/${file}/screenshots`)) {
+    const screenshots = fs.readdirSync(`./${servappsFolder}/${file}/screenshots`)
+    for (const screenshot of screenshots) {
+      servapp.screenshots.push(`${repoURL}/${servappsFolder}/${file}/screenshots/${screenshot}`)
+    }
   }
 
   if(fs.existsSync(`./${servappsFolder}/${file}/artefacts`)) {
